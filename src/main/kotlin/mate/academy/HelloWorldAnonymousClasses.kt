@@ -7,23 +7,23 @@ class HelloWorldAnonymousClasses {
         fun greetSomeone(someone: String): String
     }
 
-    fun getListOfGreeting(): List<HelloWorldGreeting> {
-        val engGreeting = object: HelloWorldGreeting {
-            override fun greet(): String = "Hello world"
-            override fun greetSomeone(someone: String): String = "Hello $someone"
-        }
-        val espGreeting = object: HelloWorldGreeting {
-            override fun greet(): String = "Hola, mundo"
-            override fun greetSomeone(someone: String): String = "Hola, $someone"
-        }
-        val frGreeting = object: HelloWorldGreeting {
-            override fun greet(): String = "Salut tout le monde"
-            override fun greetSomeone(someone: String): String = "Salut $someone"
-        }
-        return listOf(engGreeting, frGreeting, espGreeting)
-    }
-
     fun sayHello(names: List<String>): List<String> {
+        fun getListOfGreeting(): List<HelloWorldGreeting> {
+            val engGreeting = object: HelloWorldGreeting {
+                override fun greet(): String = "Hello world"
+                override fun greetSomeone(someone: String): String = "Hello $someone"
+            }
+            val espGreeting = object: HelloWorldGreeting {
+                override fun greet(): String = "Hola, mundo"
+                override fun greetSomeone(someone: String): String = "Hola, $someone"
+            }
+            val frGreeting = object: HelloWorldGreeting {
+                override fun greet(): String = "Salut tout le monde"
+                override fun greetSomeone(someone: String): String = "Salut $someone"
+            }
+            return listOf(engGreeting, frGreeting, espGreeting)
+        }
+
         val returnsList: MutableList<String> = mutableListOf()
         val listOfGreeting = getListOfGreeting()
 
